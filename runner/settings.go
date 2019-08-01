@@ -33,6 +33,8 @@ var settings = map[string]string{
 	"log_color_runner":  "green",
 	"log_color_watcher": "magenta",
 	"log_color_app":     "",
+	"build_mod":         "vendor",
+	"build_param":       "",
 }
 
 var colors = map[string]string{
@@ -124,7 +126,20 @@ func buildPath() string {
 	if runtime.GOOS == "windows" && filepath.Ext(p) != ".exe" {
 		p += ".exe"
 	}
+	if !settings["build_param"] {
+		p += " " + string.TrimSpace(settings["build_param"])
+	}
 	return p
+}
+func buildParam() string {
+	return settings["build_param"]
+}
+func buildMod() string {
+	cmdmod := ""
+	if settings["build_mod"] == "vendor" {
+		cmdmod = "-mod=vendor"
+	}
+	return cmdmod
 }
 
 func buildErrorsFileName() string {
