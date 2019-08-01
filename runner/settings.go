@@ -127,7 +127,7 @@ func buildPath() string {
 		p += ".exe"
 	}
 	if settings["build_param"] != "" {
-		p += " " + string.TrimSpace(settings["build_param"])
+		p += " " + strings.TrimSpace(settings["build_param"])
 	}
 	return p
 }
