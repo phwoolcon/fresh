@@ -126,7 +126,7 @@ func buildPath() string {
 	if runtime.GOOS == "windows" && filepath.Ext(p) != ".exe" {
 		p += ".exe"
 	}
-	if !settings["build_param"] {
+	if settings["build_param"] != "" {
 		p += " " + string.TrimSpace(settings["build_param"])
 	}
 	return p
