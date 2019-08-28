@@ -15,7 +15,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/CastleSky/fresh/runner"
+	"github.com/phwoolcon/fresh/runner"
 	"os"
 )
 

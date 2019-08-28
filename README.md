@@ -10,7 +10,7 @@ It currently works with [Traffic](https://github.com/pilu/traffic), [Martini](ht
 
 ## Installation
 
-    go get github.com/CastleSky/fresh
+    go get github.com/phwoolcon/fresh
 
 ## Usage
 
@@ -33,6 +33,7 @@ Check the `_examples` folder if you want to use it with Martini or Gocraft Web.
 Here is a sample config file with the default settings:
 
     root:              .
+    entry:
     tmp_path:          ./tmp
     build_name:        runner-build
     build_log:         runner-build-errors.log
